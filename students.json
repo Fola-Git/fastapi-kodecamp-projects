@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Fola",
+        "subject_scores": {
+            "Math": 90,
+            "English": 85,
+            "Science": 80
+        },
+        "average": 85.0,
+        "grade": "A"
+    },
+    {
+        "name": "Starr",
+        "subject_scores": {
+            "Math": 67,
+            "English": 46,
+            "Science": 98
+        },
+        "average": 70.33,
+        "grade": "A"
+    }
+]
