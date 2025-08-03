@@ -1,0 +1,12 @@
+{
+    "Headphones": {
+        "price": 150,
+        "quantity": 5,
+        "total": 750
+    },
+    "Laptop": {
+        "price": 500,
+        "quantity": 3,
+        "total": 1500
+    }
+}
