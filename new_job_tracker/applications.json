@@ -1,1 +1,16 @@
-{}
+{
+  "sam": [
+    {
+      "job_title": "DevOps Engineer",
+      "company": "AWS",
+      "date_applied": "2025-08-16",
+      "status": "applied"
+    },
+    {
+      "job_title": "Backend Engineer",
+      "company": "Seamfix",
+      "date_applied": "2025-08-16",
+      "status": "applied"
+    }
+  ]
+}
