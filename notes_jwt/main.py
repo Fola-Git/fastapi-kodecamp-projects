@@ -86,3 +86,17 @@ def login(form_data: OAuth2PasswordRequestForm = Depends()):
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Incorrect username or password")
     token = create_access_token(subject=user.username)
     return {"access_token": token, "token_type": "bearer"}
+
+@app.post("/notes/")
+def add_note(note: Note, username: str = Depends(get_current_username)):
+    data = read_json(NOTES_FILE, {})
+    user_notes: List[dict] = data.get(username, [])
+    user_notes.append(note.model_dump())
+    data[username] = user_notes
+    write_json(NOTES_FILE, data)
+    return {"message": "Note added", "note": note}
+
+@app.get("/notes/")
+def list_notes(username: str = Depends(get_current_username)):
+    data = read_json(NOTES_FILE, {})
+    return {"username": username, "notes": data.get(username, [])}
