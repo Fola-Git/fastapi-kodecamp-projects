@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "id": 1,
+    "name": "Laptop",
+    "price": 999.99,
+    "stock": 8
+  },
+  {
+    "id": 2,
+    "name": "Google Pixel Pro XL",
+    "price": 2999.99,
+    "stock": 5
+  },
+  {
+    "id": 3,
+    "name": "Smartwatch",
+    "price": 99.99,
+    "stock": 20
+  }
+]
