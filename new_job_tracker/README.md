@@ -1,4 +1,4 @@
-# Task 3: Job Application Tracker with Secure Access
+Job Application Tracker with Secure Access
 
 Each user can only see their own job applications. Uses HTTP Basic auth and filters by the current user.
 
