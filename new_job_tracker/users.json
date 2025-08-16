@@ -1,0 +1,10 @@
+{
+  "sam": {
+    "username": "sam",
+    "password_hash": "$2b$12$A3XCSvoBJSagMMyPz/W6wOTrSOaWDpGInBgWUAZNmAXD7D7wyP6hG"
+  },
+  "tola": {
+    "username": "tola",
+    "password_hash": "$2b$12$b1s4LahoLRMFANtk2f0cAePG/2iSxKMj6km6ZvGO7QO6oLtK7RAVe"
+  }
+}
