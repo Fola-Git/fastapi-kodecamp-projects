@@ -1,1 +1,20 @@
-{}
+{
+  "starr": {
+    "username": "starr",
+    "password_hash": "$2b$12$OcKmMhizaVqEcdXsMc.2MOtArta.sQHVKaS6Tjq99FN0KmUW0Ey6S",
+    "grades": [
+      90.0,
+      85.0,
+      92.0
+    ]
+  },
+  "Sheriff Joe": {
+    "username": "Sheriff Joe",
+    "password_hash": "$2b$12$/YeD6hCsCUcc44b5mGbO4OZqYPYhQKkyRY7CJH8Tm7y9JrKm3zH9S",
+    "grades": [
+      26.0,
+      95.0,
+      42.0
+    ]
+  }
+}
