@@ -53,3 +53,27 @@ def add_product(req: AddProductRequest, admin: User = Depends(require_role("admi
     data.append(product.model_dump())
     write_json(PRODUCTS_FILE, data)
     return {"message": "Product added", "product": product}
+
+@app.get("/products/")
+def list_products():
+    data = read_json(PRODUCTS_FILE, [])
+    return {"products": data}
+
+@app.post("/cart/add/")
+def add_to_cart(req: CartAddRequest, user: User = Depends(get_current_user)):
+    products = read_json(PRODUCTS_FILE, [])
+    prod = next((p for p in products if p["id"] == req.product_id), None)
+    if not prod:
+        raise HTTPException(status_code=404, detail="Product not found")
+    if req.quantity > prod.get("stock", 0):
+        raise HTTPException(status_code=400, detail="Insufficient stock")
+    # decrement stock
+    prod["stock"] -= req.quantity
+    write_json(PRODUCTS_FILE, products)
+
+    cart = read_json(CART_FILE, {})
+    user_cart = cart.get(user.username, [])
+    user_cart.append({"product_id": req.product_id, "quantity": req.quantity})
+    cart[user.username] = user_cart
+    write_json(CART_FILE, cart)
+    return {"message": "Added to cart", "cart": user_cart} 
