@@ -57,3 +57,24 @@ def get_current_student(credentials: HTTPBasicCredentials = Depends(security)) -
     if not user or not verify_password(credentials.password, user.password_hash):
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid credentials")
     return user
+
+@app.post("/register/")
+def register(req: RegisterRequest):
+    students = read_students()
+    if req.username in students:
+        raise HTTPException(status_code=400, detail="User already exists")
+    hashed = pwd_context.hash(req.password)
+    students[req.username] = Student(username=req.username, password_hash=hashed, grades=req.grades or [])
+    write_students(students)
+    return {"message": "Registered successfully"}
+
+
+@app.post("/login/")
+def login(credentials: HTTPBasicCredentials = Depends(security)):
+    _ = get_current_student(credentials)
+    return {"message": "Login successful"}
+
+
+@app.get("/grades/")
+def get_grades(current: Student = Depends(get_current_student)):
+    return {"username": current.username, "grades": current.grades} 
