@@ -1,4 +1,4 @@
-# Task 1 – Student Management System
+Student Management System
 
 Auth: **HTTP Basic** using `users.json`. Only logged-in users can create/update/delete.
 
