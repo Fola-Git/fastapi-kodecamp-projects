@@ -1,4 +1,4 @@
-# Task 4 – Notes API
+# Task 7 – Notes API
 
 - SQLModel Note model
 - Middleware counts requests and logs them; header `X-Total-Requests`
@@ -7,7 +7,7 @@
 
 ## Run
 ```bash
-cd task4_notes_api
+cd task7_notes_api
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 uvicorn app.main:app --reload
