@@ -7,7 +7,7 @@
 
 ## Run
 ```bash
-cd task5_contacts_api
+cd contacts_api
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 uvicorn app.main:app --reload
