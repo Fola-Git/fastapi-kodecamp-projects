@@ -8,9 +8,6 @@ engine = create_engine(DATABASE_URL, echo=False, connect_args=connect_args)
 def init_db():
     SQLModel.metadata.create_all(engine)
 
-@contextmanager
 def get_session():
     with Session(engine) as session:
-        yield session
-
-
+        yield session 
