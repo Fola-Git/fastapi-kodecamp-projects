@@ -4,7 +4,7 @@ Auth: **HTTP Basic** using `users.json`. Only logged-in users can create/update/
 
 ## Run
 ```bash
-cd task1_student_management
+cd student_management
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 uvicorn app.main:app --reload
