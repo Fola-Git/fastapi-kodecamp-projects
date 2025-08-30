@@ -1,4 +1,4 @@
-# Task 5 – Contact Manager API
+# Contact Manager API
 
 - JWT auth
 - Contact model with `user_id` FK
